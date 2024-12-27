@@ -31,9 +31,9 @@ export default function ProductHero() {
               ))}
             </div>
             <p className="text-gray-700 italic">
-              "I bought this pack and it made my purchasing of skincare products
+            &quot;I bought this pack and it made my purchasing of skincare products
               make super easy. Each of the product were amazing and can be used
-              for every skin types. I just love it"
+              for every skin types. I just love it&quot;
             </p>
           </div>
         </div>

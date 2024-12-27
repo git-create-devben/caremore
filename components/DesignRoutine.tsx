@@ -9,9 +9,7 @@ import {
   Product1,
   Product2,
   Product3,
-  Product4,
-  Product5,
-  Product6,
+
 } from "~/lib/img";
 import { useState } from "react";
 const skinTypes = [

@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-[#F0E1DC] text-gray-600 py-12 px-4 md:px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-800">CAREMORE IN'T</h3>
+          <h3 className="text-lg font-semibold text-gray-800">CAREMORE IN&apos;T</h3>
           <p className="text-sm">Enhancing your natural beauty with our premium cosmetic products.</p>
         </div>
         

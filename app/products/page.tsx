@@ -1,10 +1,10 @@
 import { Search } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "~/components/ui/button";
 import { ProductExample } from "~/lib/ProductExample";
-import SearchImg from "~/public/image/assets/searchImg.png";
-import RoutineImg from "~/public/image/image1.png";
+
 import { ProductTypes } from "~/types/product";
 export default function Products() {
   return (
@@ -29,7 +29,7 @@ export default function Products() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-10">
         {ProductExample.map((data: ProductTypes, i) => (
           <Link className="flex flex-col h-full" key={i} href="/products/overview/1">
-            <img
+            <Image
               src={data.img.src}
               width={1000}
               height={1000}

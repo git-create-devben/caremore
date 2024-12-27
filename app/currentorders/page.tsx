@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
-import { Product1, Product7 } from "~/lib/img";
+import { Product7 } from "~/lib/img";
 
 interface OrderDetailsProps {
   orderId: string;
@@ -35,48 +35,50 @@ interface OrderDetailsProps {
   };
 }
 
-export default function OrderDetails({
-  orderId = "3354654654526",
-  orderDate = "Feb 16, 2022",
-  estimatedDelivery = "May 16, 2022",
-  products = [
-    {
-      name: "Facewash",
-      description: "Lavender, Rosemary",
-      quantity: 3,
-      price: 29,
-      image: Product7,
+const OrderDetails = () => {
+  const router = useRouter()
+  const data: OrderDetailsProps = {
+    orderId: "3354654654526",
+    orderDate: "Feb 16, 2022",
+    estimatedDelivery: "May 16, 2022",
+    products: [
+      {
+        name: "Facewash",
+        description: "Lavender, Rosemary",
+        quantity: 3,
+        price: 29,
+        image: Product7,
+      },
+    ],
+    payment: {
+      method: "Visa",
+      last4: "**56",
     },
-  ],
-  payment = {
-    method: "Visa",
-    last4: "**56",
-  },
-  summary = {
-    discount: 5554,
-    discountPercentage: 20,
-    delivery: 0,
-    tax: 221.88,
-    total: 0,
-  },
-  shipping = {
-    address: "847 Jewess Bridge Apt. 174",
-    city: "London",
-    country: "UK",
-    phone: "474-769-3919",
-  },
-}: OrderDetailsProps) {
-    const router = useRouter()
+    summary: {
+      discount: 5554,
+      discountPercentage: 20,
+      delivery: 0,
+      tax: 221.88,
+      total: 0,
+    },
+    shipping: {
+      address: "847 Jewess Bridge Apt. 174",
+      city: "London",
+      country: "UK",
+      phone: "474-769-3919",
+    },
+  }
+
   return (
     <div className="min-h-screen bg-[#FBF0EA] p-6">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Order Header */}
         <div className="space-y-2 ">
           <h1 className="text-lg font-semibold text-gray-900">
-            Order ID: {orderId}
+            Order ID: {data.orderId}
           </h1>
           <div className="flex flex-col md:flex-row md:items-center gap-4 text-sm text-gray-600">
-            <span>Order date: {orderDate}</span>
+            <span>Order date: {data.orderDate}</span>
             <div className="flex items-center gap-2 text-green-500">
               <svg
                 className="w-4 h-4"
@@ -92,13 +94,13 @@ export default function OrderDetails({
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <span>Estimated delivery: {estimatedDelivery}</span>
+              <span>Estimated delivery: {data.estimatedDelivery}</span>
             </div>
           </div>
         </div>
 
         {/* Products */}
-        {products.map((product, index) => (
+        {data.products.map((product, index) => (
           <Card key={index} className="p-6 bg-[#F0E1DC] border-none">
             <div className="flex md:flex-row flex-col items-center justify-between">
               <div className="flex items-center gap-6">
@@ -119,7 +121,7 @@ export default function OrderDetails({
                 </div>
               </div>
               <Button
-              onClick={() => router.push("/currentorders/orders/1")}
+                onClick={() => router.push("/currentorders/orders/1")}
                 variant="outline"
                 className="text-red-600 hover:text-red-700 ml-9 md:ml-0 cursor-pointer"
               >
@@ -136,7 +138,7 @@ export default function OrderDetails({
             <h2 className="font-medium text-gray-900">Payment</h2>
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-600">
-                {payment.method} {payment.last4}
+                {data.payment.method} {data.payment.last4}
               </span>
               <Image
                 src="/visa.svg"
@@ -212,16 +214,16 @@ export default function OrderDetails({
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-600">Discount</span>
-                <span className="text-gray-900">${summary.discount}</span>
+                <span className="text-gray-900">${data.summary.discount}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">
-                  Discount ({summary.discountPercentage}%)
+                  Discount ({data.summary.discountPercentage}%)
                 </span>
                 <span className="text-gray-900">
                   -$
                   {(
-                    (summary.discount * summary.discountPercentage) /
+                    (data.summary.discount * data.summary.discountPercentage) /
                     100
                   ).toFixed(2)}
                 </span>
@@ -229,17 +231,17 @@ export default function OrderDetails({
               <div className="flex justify-between">
                 <span className="text-gray-600">Delivery</span>
                 <span className="text-gray-900">
-                  ${summary.delivery.toFixed(2)}
+                  ${data.summary.delivery.toFixed(2)}
                 </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Tax</span>
-                <span className="text-gray-900">+${summary.tax}</span>
+                <span className="text-gray-900">+${data.summary.tax}</span>
               </div>
               <div className="flex justify-between font-medium pt-2 border-t">
                 <span className="text-gray-900">Total</span>
                 <span className="text-gray-900">
-                  ${summary.total.toFixed(2)}
+                  ${data.summary.total.toFixed(2)}
                 </span>
               </div>
             </div>
@@ -249,11 +251,11 @@ export default function OrderDetails({
           <div className="space-y-4">
             <h2 className="font-medium text-gray-900">Shipping Address</h2>
             <div className="text-sm text-gray-600 space-y-1">
-              <p>{shipping.address}</p>
+              <p>{data.shipping.address}</p>
               <p>
-                {shipping.city}, {shipping.country}
+                {data.shipping.city}, {data.shipping.country}
               </p>
-              <p>{shipping.phone}</p>
+              <p>{data.shipping.phone}</p>
             </div>
           </div>
         </div>
@@ -261,3 +263,5 @@ export default function OrderDetails({
     </div>
   );
 }
+
+export default OrderDetails;

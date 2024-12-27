@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import DesignRoutine from "~/components/DesignRoutine";
 import { ProductCarousel } from "~/components/ProductCarousel";
 import ProductHero from "~/components/ProductHero";

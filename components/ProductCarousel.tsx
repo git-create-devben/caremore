@@ -1,7 +1,7 @@
 import Image from "next/image";
 import * as React from "react";
 
-import { Card, CardContent } from "~/components/ui/card";
+// import { Card, CardContent } from "~/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -9,14 +9,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/components/ui/carousel";
-import HeroImg from "~/public/image/image0.png";
+// import HeroImg from "~/public/image/image0.png";
 import {
   Product1,
   Product2,
   Product3,
   Product4,
-  Product5,
-  Product6,
+ 
 } from "~/lib/img";
 
 export function ProductCarousel({title}:{title:string}) {

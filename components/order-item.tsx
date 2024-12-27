@@ -26,7 +26,7 @@ export function OrderItem({ order }: OrderItemProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#F0E1DC] p-4 rounded-lg">
           <div className="w-32">
             <div className="aspect-square relative bg-white  rounded-md">
-              <img
+              <Image
                 src={order.product.imageUrl.src}
                 alt={order.product.name}
                 className="object-contain w-full h-full"

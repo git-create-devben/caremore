@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { Button } from "./ui/button";
-import { Minus, Plus, X, XCircle } from "lucide-react";
+import { Minus, Plus, XCircle } from "lucide-react";
 
 interface CartItemProps {
   id: string;
@@ -12,7 +12,6 @@ interface CartItemProps {
 }
 
 export function CartItem({
-  id,
   name,
   description,
   price,

@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Card, CardContent } from "./ui/card";
+// import { Card, CardContent } from "./ui/card";
 import { UserCircle } from "lucide-react";
 import type { UserProfile } from "~/types/product";
 

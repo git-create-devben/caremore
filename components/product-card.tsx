@@ -4,6 +4,7 @@ import { Button } from "./ui/button"
 import { Card, CardContent, CardFooter } from "./ui/card"
 import type { Product } from "~/types/product"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 interface ProductCardProps {
   product: Product
@@ -15,7 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <Card className="overflow-hidden border-none cursor-pointer" onClick={() => navigate.push("/products/overview/1")}>
       <CardContent className="p-0">
         <div className="aspect-square relative ">
-          <img
+          <Image
             src={Product1.src}
             alt={product.name}
             className="object-contain w-full h-full"

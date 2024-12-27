@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import { Button } from "~/components/ui/button"
-import { Package, Box, Truck, Home, ArrowLeft, CheckCircle2 } from 'lucide-react'
+import { Package, Box, Truck, Home, ArrowLeft} from 'lucide-react'
 import { useRouter } from "next/navigation"
 
 export default function OrderTracking() {
