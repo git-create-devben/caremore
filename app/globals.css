@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+
+.SearchBack {
+  background: url('../public/image/assets/searchImg.png') no-repeat center;
+  background-size: cover;
+  height: 200px;
+}
