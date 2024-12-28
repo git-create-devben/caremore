@@ -114,10 +114,8 @@ export default function ProductDetail(
                 </div>
               </div>
               <Button
-                className="bg-[#983A42] text-white px-8 py-3 rounded-md hover:bg-rose-800 text-sm sm:text-base sm:py-6"
-                onClick={() => {
-                  // Handle add to cart
-                }}
+                className="cursor-pointer bg-[#983A42] text-white px-8 py-3 rounded-md hover:bg-rose-800 text-sm sm:text-base sm:py-6"
+                onClick={() => router.push("/profile") }
               >
                 Add To Cart
               </Button>

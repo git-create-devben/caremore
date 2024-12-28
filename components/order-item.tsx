@@ -29,6 +29,8 @@ export function OrderItem({ order }: OrderItemProps) {
               <Image
                 src={order.product.imageUrl.src}
                 alt={order.product.name}
+                width={100}
+                height={100}
                 className="object-contain w-full h-full"
               />
             </div>

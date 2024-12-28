@@ -19,6 +19,9 @@ export function ProductCard({ product }: ProductCardProps) {
           <Image
             src={Product1.src}
             alt={product.name}
+            width={100}
+            height={100}
+            priority
             className="object-contain w-full h-full"
           />
         </div>

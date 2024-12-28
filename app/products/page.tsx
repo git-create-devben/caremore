@@ -1,12 +1,15 @@
+"use client"
 import { Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Button } from "~/components/ui/button";
 import { ProductExample } from "~/lib/ProductExample";
 
 import { ProductTypes } from "~/types/product";
 export default function Products() {
+  const router = useRouter()
   return (
     <main className="min-h-screen ">
       <div className="SearchBack flex justify-center items-center">
@@ -46,7 +49,7 @@ export default function Products() {
               <span className="font-extrabold text-sm sm:text-base">${data.prize}</span>
             </div>
             <p className="text-xs mb-2 line-clamp-2">{data.desc}</p>
-            <Button className="w-full bg-amber-900 text-white mt-auto text-xs sm:text-sm">Add to Cart</Button>
+            <Button className=" cursor-pointer w-full bg-amber-900 text-white mt-auto text-xs sm:text-sm" onClick={() => router.push("/profile")}>Add to Cart</Button>
           </Link>
         ))}
       </div>
