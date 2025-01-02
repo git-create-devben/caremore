@@ -53,7 +53,7 @@ export function ProductCarousel({title}:{title:string}) {
        <h3 className="font-semibold text-center text-2xl uppercase">{title}</h3>
       <CarouselContent className=" p-10 perspective-distant" >       
         {Product.map((p, index) => (
-          <CarouselItem key={index} onClick={() => router.push("/products/overview/1")} className=" cursor-pointer md:basis-1/4 lg:basis-1/3 transform-3d rotate-x-21 rotate-z- shadow-xl transition-all duration-500 hover:-translate-y-8  hover:shadow-2xl">
+          <CarouselItem key={index} onClick={() => router.push("/products/overview/1")} className=" cursor-pointer md:basis-1/4 lg:basis-1/3 transform-3d  shadow-xl transition-all duration-500 hover:scale-3d hover:shadow-2xl">
             <div className="p-1">
               <Image
                 src={p.img}
